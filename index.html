@@ -3,67 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A basic webpage demonstrating HTML elements.">
-    <title>Basic HTML Page</title>
+    <title>Form Handling & Validation</title>
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <h2>Order Form</h2>
+    <form id="orderForm">
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
 
-    <!-- Page Header -->
-    <header>
-        <h1>Welcome to My Webpage</h1>
-        <h2>Welcome to My Webpage</h2>
-        <h3>Welcome to My Webpage</h3>
-        <h4>Welcome to My Webpage</h4>
-        <h5>Welcome to My Webpage</h5>
-        <h6>Welcome to My Webpage</h6>
-        <p>The web was created by Tim Berners-Lee in 1989 and has evolved significantly since then.</p>
-        <nav>
-            <ul>
-                <li>
-                    <a href="Newfolder/about.html">About</a>
-                </li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- Product Selection -->
+        <label for="product">Select Product:</label>
+        <select id="product" name="product">
+            <option>Select Item</option>
+            <option value="10">Item A - $10</option>
+            <option value="20">Item B - $20</option>
+            <option value="30">Item C - $30</option>
+        </select>
+        <br>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Sectioning elements -->
-        <section>
-            <h2>About the Web</h2>
-            <p>The web was created by Tim Berners-Lee in 1989 and has evolved significantly since then.</p>
-            <img src="Newfolder/download.png" alt="History of the Web" width="300">
-        </section>
+        <!-- Quantity -->
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <br>
 
-        <section>
-            <h2>Our Services</h2>
-            <p>We offer a variety of web development services including:</p>
-            <ol>
-                <li>HTML & CSS Development</li>
-                <li>JavaScript Programming</li>
-                <li>Website Optimization</li>
-                <li>HTML & CSS Development</li>
-                <li>JavaScript Programming</li>
-                <li>Website Optimization</li>
-            </ol>
-        </section>
+        <!-- Payment Method (Radio Buttons) -->
+        <label>Payment Method:</label>
+        <input type="radio" name="payment" value="Credit Card" checked> Credit Card
+        <input type="radio" name="payment" value="PayPal"> PayPal
+        <br>
 
-        <!-- Text-level elements -->
-        <section>
-            <h2>HTML Elements</h2>
-            <p><strong>HTML</strong> (HyperText Markup Language) is used to structure web content.</p>
-            <p>Character symbols: &copy; &reg; &hearts;</p>
-        </section>
-    </main>
+        <!-- Credit Card Number -->
+        <label for="cardNumber">Credit Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+        <span id="cardError" style="color: red;"></span>
+        <br>
 
-    <!-- Footer with Contact Links -->
-    <footer>
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
-        <p>Phone: <a href="tel:+123456789">+1 234 567 89</a></p>
-    </footer>
+        <!-- Total Price (Calculated Field) -->
+        <label>Total Price:</label>
+        <span id="totalPrice">$0.00</span>
+        <br>
 
+        <!-- Submit Button -->
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <h3>Extracted Data from URL:</h3>
+    <p id="urlData"></p>
 </body>
 </html>
